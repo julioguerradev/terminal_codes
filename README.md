@@ -43,11 +43,6 @@
 <details>
 <summary>Clique para expandir</summary>
 
-- **Alterar versões do PHP:**
-  ```bash
-  sudo update-alternatives --config php
-  ```
-
 - **Instalar PHP CLI, Unzip e Curl:**
   ```bash
   sudo apt install php-cli unzip curl
