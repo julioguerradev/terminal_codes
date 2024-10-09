@@ -1,5 +1,14 @@
 # Anotações de Desenvolvimento
 
+## SSH
+<details>
+  <summary>Clique para expandir</summary>
+  - **Gerar chave SSH:**
+  ```bash
+    ssh-keygen
+  ```
+</details>
+
 ## Iniciando o Docker
 
 <details>
