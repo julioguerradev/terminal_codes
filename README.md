@@ -158,3 +158,19 @@
   ```
 
 </details>
+
+
+## Linux
+
+<details>
+<summary>Clique para expandir</summary>
+
+- **Substituir linhas com o primeiro parâmetro para as do segundo parâmetro:**
+  ```bash
+  sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' seu_arquivo_dump.sql
+  ```
+
+</details>
+
+
+
