@@ -173,4 +173,22 @@
 </details>
 
 
+## Laravel
+
+<details>
+<summary>Clique para expandir</summary>
+
+- **Controllers de utilização Única**
+  ```bash
+  sail artisan make:controller CheckoutController --invokable
+  ```
+
+  - **Utilizando resources**
+  ```bash
+  sail artisan make:controller PostController --resource --model=Post
+  ```
+
+</details>
+
+
 
