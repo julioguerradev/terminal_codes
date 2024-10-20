@@ -8,6 +8,16 @@
   ```bash
     ssh-keygen
   ```
+
+  - **Buscando chave privada:**
+  ```bash
+    cat ~/.ssh/id_rsa
+  ```
+
+  - **Buscando chave pública:**
+  ```bash
+    cat ~/.ssh/id_rsa.pub
+  ```
 </details>
 
 ## Iniciando o Docker
