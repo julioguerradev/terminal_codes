@@ -20,7 +20,7 @@
   ```
 </details>
 
-## Iniciando o Docker
+## WSL e Docker
 
 <details>
 <summary>Clique para expandir</summary>
@@ -78,10 +78,7 @@
   sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
   ```
 
-- **Criar um ambiente Laravel:**
-  ```bash
-  curl -s "https://laravel.build/laravel-10-teste?with=mysql,redis,mailpit" | bash
-  ```
+
 
 - **Verificar versões possíveis do PHP:**
   ```bash
@@ -141,12 +138,6 @@
   sudo systemctl stop apache2
   ```
 
-- **Verificar o hash do instalador do Composer:**
-  ```bash
-  HASH=$(curl -sS https://composer.github.io/installer.sig)
-  php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-  ```
-
 </details>
 
 ## Banco de Dados
@@ -159,12 +150,6 @@
   CREATE USER 'sail'@'%' IDENTIFIED BY 'password';
   GRANT ALL PRIVILEGES ON *.* TO 'sail'@'%';
   FLUSH PRIVILEGES;
-  ```
-
-- **Definir permissões e alterar o proprietário do diretório:**
-  ```bash
-  sudo chmod -R 775 /home/julio/projects/atlas-goinfra
-  sudo chown -R $USER:$USER /home/julio/projects/atlas-goinfra
   ```
 
 </details>
@@ -180,6 +165,18 @@
   sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g' seu_arquivo_dump.sql
   ```
 
+- **Definir permissões e alterar o proprietário do diretório:**
+  ```bash
+  sudo chmod -R 775 /home/julio/projects/atlas-goinfra
+  sudo chown -R $USER:$USER /home/julio/projects/atlas-goinfra
+  ```
+
+- **Este código verifica a integridade do instalador do Composer ao comparar seu hash oficial com o hash local:**
+  ```bash
+  HASH=$(curl -sS https://composer.github.io/installer.sig)
+  php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  ```
+
 </details>
 
 
@@ -188,15 +185,45 @@
 <details>
 <summary>Clique para expandir</summary>
 
+- **Criar um ambiente Laravel:**
+  ```bash
+  curl -s "https://laravel.build/laravel-10-teste?with=mysql,redis,mailpit" | bash
+  ```
+
 - **Controllers de utilização Única**
   ```bash
   sail artisan make:controller CheckoutController --invokable
   ```
 
-  - **Utilizando resources**
+- **Utilizando resources**
   ```bash
   sail artisan make:controller PostController --resource --model=Post
   ```
+
+  <details>
+  <summary>Tinker</summary>
+
+    - **Buscando valores com a Model:**
+      ```bash
+      App\Models\Fornecedor::all()->toArray();
+      ```
+
+    - **Buscando valores com "DB":**
+      ```bash
+      DB::table('fornecedores')->get();
+      ```
+
+    - **Buscando Colunas:**
+      ```bash
+      Schema::getColumnListing('contrato_trechos_geo_view');
+      ```
+
+    - **Truncando tabela*:*
+      ```bash
+      App\Models\Fornecedor::truncate();
+      ```
+  </details>
+
 
 </details>
 
