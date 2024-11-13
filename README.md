@@ -224,7 +224,13 @@
       ```
   </details>
 
-
+    <details>
+  <summary>Commit</summary>
+    - **Rodando comando que está no Lint:**
+      ```Lint
+      npm run lint -- --fix
+      ```
+  </details>
 </details>
 
 
