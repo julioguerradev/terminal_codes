@@ -200,22 +200,22 @@
   sail artisan make:controller PostController --resource --model=Post
   ```
 
-
-  <details>
-  <summary>Utilizando um apelido para "./vendor/bin/sail"</summary>
-  - **Abra o arquivo de configuração**
+<details>
+<summary>Utilizando um apelido para "./vendor/bin/sail"</summary>
+  
+  - **Abra o arquivo de configuração:**
+    ```bash
+      vim ~/.bashrc
     ```
-    vim ~/.bashrc
-    ```
-  - **Cole o comando abaixo no final do arquivo**
-    ```
-    alias sail='[ -f sail ] && bash sail || ./vendor/bin/sail'
-    ```
-- **Feche o Arquivo de configuração**
-    ```
-    source ~/.bashrc
-    ```
-  </details>
+  - **Cole o comando abaixo no final do arquivo:**
+      ```bash
+      alias sail='[ -f sail ] && bash sail || ./vendor/bin/sail'
+      ```
+  - **Feche o Arquivo de configuração:**
+      ```bash
+      source ~/.bashrc
+      ```
+</details>
 
   <details>
   <summary>Tinker</summary>
