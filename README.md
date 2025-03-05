@@ -177,6 +177,12 @@
   php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
   ```
 
+- **Este código deleta todas as branchs localmente, com exeção de stage e main:**
+  ```bash
+  git branch | grep -ve " main$\| stage$" | sed 's/^[ *]*//' | xargs git branch -D
+  ```
+
+
 </details>
 
 
